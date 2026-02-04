@@ -30,11 +30,11 @@ class RemoteViewer:
         threading.Thread(target=self._wait_for_client, daemon=True).start()
         threading.Thread(target=self._receive_screen, daemon=True).start()
         
-            # רישום אירועי עכבר ומקלדת
-            self.panel.bind("<Motion>", lambda e: self._send_mouse(e, "move"))
-            self.panel.bind("<Button-1>", lambda e: self._send_mouse(e, "left"))
-            self.panel.bind("<Button-3>", lambda e: self._send_mouse(e, "right"))
-            self.root.bind("<Key>", self._send_key)
+        # רישום אירועי עכבר ומקלדת
+        self.panel.bind("<Motion>", lambda e: self._send_mouse(e, "move"))
+        self.panel.bind("<Button-1>", lambda e: self._send_mouse(e, "left"))
+        self.panel.bind("<Button-3>", lambda e: self._send_mouse(e, "right"))
+        self.root.bind("<Key>", self._send_key)
         
         self.root.mainloop()
 
