@@ -7,7 +7,7 @@ import io
 class RemoteViewer:
     def __init__(self, host='0.0.0.0', tcp_port=8081, udp_port=8080):
         self.host, self.tcp_port, self.udp_port = host, tcp_port, udp_port
-        
+
         # בניית ממשק המשתמש
         self.root = tk.Tk()
         self.root.title("Remote Desktop - Controller")
